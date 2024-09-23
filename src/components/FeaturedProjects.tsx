@@ -7,11 +7,11 @@ import letters from "@/../public/assets/features/letters-img.svg";
 import sparkpay from "@/../public/assets/features/sparkpay-img.svg";
 import tifi from "@/../public/assets/features/tifi-img.svg";
 import historyofafricaLogo from "@/../public/assets/logos/historyofafrica-logo.svg";
-import homeworkaiLogo from "@/../public/assets/logos/historyofafrica-logo.svg";
-import hotgistLogo from "@/../public/assets/logos/historyofafrica-logo.svg";
-import lettersLogo from "@/../public/assets/logos/historyofafrica-logo.svg";
-import sparkpayLogo from "@/../public/assets/logos/historyofafrica-logo.svg";
-import tifiLogo from "@/../public/assets/logos/historyofafrica-logo.svg";
+import homeworkaiLogo from "@/../public/assets/logos/homeworkai-logo.svg";
+import hotgistLogo from "@/../public/assets/logos/hotgist-logo.svg";
+import lettersLogo from "@/../public/assets/logos/letters-logo.svg";
+import sparkpayLogo from "@/../public/assets/logos/sparkpay-logo.svg";
+import tifiLogo from "@/../public/assets/logos/tifi-logo.svg";
 
 interface FeatureContent {
   alt: string;
@@ -21,6 +21,7 @@ interface FeatureContent {
   tag1: string;
   tag2: string;
   href: string;
+  color: string;
 }
 
  const featureContent: FeatureContent[] = [
@@ -31,7 +32,8 @@ interface FeatureContent {
      desc: "TiFi streamlines content creation with AI-driven tools for transcription, summarization, and generation.",
      tag1: "Content Generation",
      tag2: "AI-Powered",
-     href: "https://tifi.tv",
+     href: "/projects/tifi",
+     color: "bg-[#F0F0F0]",
    },
    {
      alt: "Letters app",
@@ -41,6 +43,7 @@ interface FeatureContent {
      tag1: "Social Media",
      tag2: "AI-Assistance",
      href: "/projects/letters",
+     color: "bg-[#FCEEE8]",
    },
    {
      alt: "Hotgist app",
@@ -50,6 +53,7 @@ interface FeatureContent {
      tag1: "Social Media",
      tag2: "Entertainment",
      href: "/projects/hotgist",
+     color: "bg-[#E8FCF7]",
    },
    {
      alt: "Homework AI app",
@@ -59,6 +63,7 @@ interface FeatureContent {
      tag1: "Education",
      tag2: "AI-Assistance",
      href: "/projects/homeworkai",
+     color: "bg-[#FFF7F5]",
    },
    {
      alt: "History of Africa project",
@@ -68,6 +73,7 @@ interface FeatureContent {
      tag1: "Education",
      tag2: "AI-Assistance",
      href: "/projects/historyofafrica",
+     color: "bg-[#FFF2E5]",
    },
    {
      alt: "Sparkpay app",
@@ -77,6 +83,7 @@ interface FeatureContent {
      tag1: "Fintech",
      tag2: "Utility Management",
      href: "/projects/sparkpay",
+     color: "bg-[#E6F0FA]",
    },
  ];
 const FeaturedProjects = ({}) => {
@@ -84,7 +91,7 @@ const FeaturedProjects = ({}) => {
     <div className="w-[85vw] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 items-center justify-around justify-items-center">
       {featureContent.map((feature: any, index: number) => (
         <div
-          className="w-full h-[416px] rounded-md border-2 flex items-center justify-center border-gray-300 bg-[#E6F0FA] relative overflow-hidden"
+          className={`w-full h-[416px] rounded-md border-2 flex items-center justify-center border-gray-300 relative overflow-hidden ${feature.color}`}
           key={index}
         >
           <Image src={feature.image} alt={feature.alt} />

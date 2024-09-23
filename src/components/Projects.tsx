@@ -15,7 +15,7 @@ const Projects = () => {
   return (
     <div
       className="flex flex-col items-center justify-center w-full min-h-screen gap-8 pb-20 scroll-smooth"
-      id="featuredProjects" data-aos="zoom-in"
+      id="featuredProjects"
     >
       <div className="w-[85vw] flex items-start justify-start flex-col gap-4 font-sans">
         <h3 className="text-4xl">Featured Projects</h3>
