@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const page = () => {
+const Page = () => {
   useEffect(() => {
     AOS.init({
       offset: 200,
@@ -59,4 +59,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

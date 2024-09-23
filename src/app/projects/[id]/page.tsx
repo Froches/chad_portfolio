@@ -6,7 +6,7 @@ import Link from "next/link";
 import { mockProjects } from "../MockProjects";
 import Image from "next/image";
 
-const page = () => {
+const Page = () => {
   const params = useParams();
   const projectId = params.id;
 
@@ -19,12 +19,12 @@ const page = () => {
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-white text-black p-20">
       <div>
-        {/* <Image
+        <Image
           src={project.logo}
           alt={project.title}
           width={100}
           height={100}
-        /> */}
+        />
         <h1 className="">{project.title}</h1>
         <p>Client: {project.client}</p>
         <p>Role: {project.role}</p>
@@ -41,12 +41,12 @@ const page = () => {
             <p>{project.goals}</p>
           </div>
         </div>
-        {/* <Image
+        <Image
           src={project.homeImage}
           alt="Home Image"
           width={100}
           height={100}
-        /> */}
+        />
       </div>
 
       <div>
@@ -94,4 +94,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

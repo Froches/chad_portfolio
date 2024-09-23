@@ -3,19 +3,19 @@
 import Image from "next/image";
 import heroIllustration from "@/../public/assets/hero-illustration.svg";
 import Projects from "@/components/Projects";
-import { useEffect } from "react";
-import AOS from "aos";
+// import { useEffect } from "react";
+// import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function Home() {
-  useEffect(() => {
-    AOS.init({
-      offset: 200,
-      duration: 600,
-      easing: "ease-in-sine",
-      delay: 100,
-    });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({
+  //     offset: 200,
+  //     duration: 600,
+  //     easing: "ease-in-sine",
+  //     delay: 100,
+  //   });
+  // }, []);
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-white text-black space-y-20">
       <div

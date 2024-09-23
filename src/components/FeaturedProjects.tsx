@@ -12,11 +12,12 @@ import hotgistLogo from "@/../public/assets/logos/hotgist-logo.svg";
 import lettersLogo from "@/../public/assets/logos/letters-logo.svg";
 import sparkpayLogo from "@/../public/assets/logos/sparkpay-logo.svg";
 import tifiLogo from "@/../public/assets/logos/tifi-logo.svg";
+import { StaticImageData } from "next/image";
 
 interface FeatureContent {
   alt: string;
-  image: any;
-  logo: any;
+  image: StaticImageData;
+  logo: StaticImageData;
   desc: string;
   tag1: string;
   tag2: string;
@@ -89,7 +90,7 @@ interface FeatureContent {
 const FeaturedProjects = ({}) => {
   return (
     <div className="w-[85vw] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 items-center justify-around justify-items-center">
-      {featureContent.map((feature: any, index: number) => (
+      {featureContent.map((feature: FeatureContent, index: number) => (
         <div
           className={`w-full h-[416px] rounded-md border-2 flex items-center justify-center border-gray-300 relative overflow-hidden ${feature.color}`}
           key={index}

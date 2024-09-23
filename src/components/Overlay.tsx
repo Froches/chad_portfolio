@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight} from 'react-icons/fa'
+import { StaticImageData } from "next/image";
 
 interface OverlayProps {
-  logo: any;
+  logo: StaticImageData;
   desc: string;
   tag1: string;
   tag2: string;
