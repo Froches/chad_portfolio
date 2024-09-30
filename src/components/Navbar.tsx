@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <div className="relative">
-      <div className="flex items-center justify-between px-8 md:px-28 py-4 text-black h-24 w-full bg-white top-0 border-b border-gray-200 z-50">
+      <div className="flex items-center justify-between px-8 lg:px-28 py-4 text-black h-24 w-full bg-white top-0 border-b border-gray-200 z-50">
         <Link href={"/"}>
           <div>
             <Image src={logo} alt="logo" />

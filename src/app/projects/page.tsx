@@ -1,12 +1,20 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { HashLoader } from "react-spinners";
 
-const page = () => {
+const Page = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/#featuredProjects");
+  }, [router]);
   return (
-    <div>
-
+    <div className="w-full bg-white h-screen flex items-center justify-center">
+      <HashLoader className="text-orange-600" />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default Page;

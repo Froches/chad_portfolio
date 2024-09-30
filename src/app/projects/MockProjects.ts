@@ -15,6 +15,7 @@ export type Project = {
   conclusion: string;
   tags: string[];
   homeImage: string;
+  extraCaseStudies: string[];
 };
 
 export const mockProjects: Project[] = [
@@ -22,13 +23,13 @@ export const mockProjects: Project[] = [
     id: "tifi",
     logo: "/assets/logos/tifi-logo-black.svg",
     title: "Empowering content creators with AI-driven solutions",
-    client: "HNG Tech.",
+    client: "HNG TECH.",
     role: "Product Designer",
     year: "August 2024",
     projectBackground:
       "Content creators and businesses often struggle with managing, creating, and distributing digital content efficiently, leading to time-consuming workflows and inconsistent quality. TiFi was developed to address these challenges by streamlining content creation and management processes.",
     goals:
-      "TiFi&apos;s goal is to revolutionize content creation by leveraging the power of AI and machine learning. It simplifies the entire process, allowing users to effortlessly transcribe, summarize, and generate high-quality content. By automating these tasks, TiFi empowers users to focus on creativity and productivity, transforming the way content creators and businesses manage their digital output.",
+      "TiFi's goal is to revolutionize content creation by leveraging the power of AI and machine learning. It simplifies the entire process, allowing users to effortlessly transcribe, summarize, and generate high-quality content. By automating these tasks, TiFi empowers users to focus on creativity and productivity, transforming the way content creators and businesses manage their digital output.",
     challenge:
       "Content creators often feel bogged down by tasks like transcription and summarization, leaving little time for creativity. With so much to juggle, they need a faster, smarter way to streamline content creation. The real challenge is finding a solution that makes these processes easier, freeing them up to focus on creativity and innovation.",
     impact:
@@ -48,6 +49,11 @@ export const mockProjects: Project[] = [
       "Working on TiFi has been one of my most fulfilling projects to date. TiFi, designed to compete in the AI-assisted content creation sector, had an existing framework before I joined the team. My role focused on enhancing the overall user experience, ensuring a cohesive design, and improving the information architecture. Throughout this project, I gained invaluable experience collaborating with a large, dynamic team of creatives, adhering to tight deadlines, and participating in regular standups to deliver a live product. It was an enriching opportunity to help optimize content management for users.",
     tags: ["React", "Next.js", "TypeScript"],
     homeImage: "/assets/projects/tifiImage.svg",
+    extraCaseStudies: [
+      "/assets/projects/tifiCaseStudy3.svg",
+      "/assets/projects/tifiCaseStudy4.svg",
+      "/assets/projects/tifiCaseStudy5.svg",
+    ],
   },
   {
     id: "letters",
@@ -79,6 +85,10 @@ export const mockProjects: Project[] = [
       "Working on TiFi has been one of my most fulfilling projects to date. TiFi, designed to compete in the AI-assisted content creation sector, had an existing framework before I joined the team. My role focused on enhancing the overall user experience, ensuring a cohesive design, and improving the information architecture. Throughout this project, I gained invaluable experience collaborating with a large, dynamic team of creatives, adhering to tight deadlines, and participating in regular standups to deliver a live product. It was an enriching opportunity to help optimize content management for users.",
     tags: ["React", "Next.js", "TypeScript"],
     homeImage: "/assets/logos/tifi-logo-black.svg",
+    extraCaseStudies: [
+      "/assets/projects/tifiCaseStudy3.svg",
+      "/assets/projects/tifiCaseStudy4.svg",
+    ],
   },
   {
     id: "hotgist",
@@ -110,6 +120,10 @@ export const mockProjects: Project[] = [
       "Working on TiFi has been one of my most fulfilling projects to date. TiFi, designed to compete in the AI-assisted content creation sector, had an existing framework before I joined the team. My role focused on enhancing the overall user experience, ensuring a cohesive design, and improving the information architecture. Throughout this project, I gained invaluable experience collaborating with a large, dynamic team of creatives, adhering to tight deadlines, and participating in regular standups to deliver a live product. It was an enriching opportunity to help optimize content management for users.",
     tags: ["React", "Next.js", "TypeScript"],
     homeImage: "/assets/logos/tifi-logo-black.svg",
+    extraCaseStudies: [
+      "/assets/projects/tifiCaseStudy3.svg",
+      "/assets/projects/tifiCaseStudy4.svg",
+    ],
   },
   {
     id: "homeworkai",
@@ -141,6 +155,10 @@ export const mockProjects: Project[] = [
       "Working on TiFi has been one of my most fulfilling projects to date. TiFi, designed to compete in the AI-assisted content creation sector, had an existing framework before I joined the team. My role focused on enhancing the overall user experience, ensuring a cohesive design, and improving the information architecture. Throughout this project, I gained invaluable experience collaborating with a large, dynamic team of creatives, adhering to tight deadlines, and participating in regular standups to deliver a live product. It was an enriching opportunity to help optimize content management for users.",
     tags: ["React", "Next.js", "TypeScript"],
     homeImage: "/assets/logos/tifi-logo-black.svg",
+    extraCaseStudies: [
+      "/assets/projects/tifiCaseStudy3.svg",
+      "/assets/projects/tifiCaseStudy4.svg",
+    ],
   },
   {
     id: "historyofafrica",
@@ -172,6 +190,10 @@ export const mockProjects: Project[] = [
       "Working on TiFi has been one of my most fulfilling projects to date. TiFi, designed to compete in the AI-assisted content creation sector, had an existing framework before I joined the team. My role focused on enhancing the overall user experience, ensuring a cohesive design, and improving the information architecture. Throughout this project, I gained invaluable experience collaborating with a large, dynamic team of creatives, adhering to tight deadlines, and participating in regular standups to deliver a live product. It was an enriching opportunity to help optimize content management for users.",
     tags: ["React", "Next.js", "TypeScript"],
     homeImage: "/assets/logos/tifi-logo-black.svg",
+    extraCaseStudies: [
+      "/assets/projects/tifiCaseStudy3.svg",
+      "/assets/projects/tifiCaseStudy4.svg",
+    ],
   },
   {
     id: "sparkpay",
@@ -203,5 +225,9 @@ export const mockProjects: Project[] = [
       "Working on TiFi has been one of my most fulfilling projects to date. TiFi, designed to compete in the AI-assisted content creation sector, had an existing framework before I joined the team. My role focused on enhancing the overall user experience, ensuring a cohesive design, and improving the information architecture. Throughout this project, I gained invaluable experience collaborating with a large, dynamic team of creatives, adhering to tight deadlines, and participating in regular standups to deliver a live product. It was an enriching opportunity to help optimize content management for users.",
     tags: ["React", "Next.js", "TypeScript"],
     homeImage: "/assets/logos/tifi-logo-black.svg",
+    extraCaseStudies: [
+      "/assets/projects/tifiCaseStudy3.svg",
+      "/assets/projects/tifiCaseStudy4.svg",
+    ],
   },
 ];
