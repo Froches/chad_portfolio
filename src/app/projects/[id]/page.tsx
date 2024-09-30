@@ -20,7 +20,7 @@ const Page = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-white text-[#212121] p-28 space-y-10">
+    <div className="flex flex-col items-center justify-start min-h-screen bg-white text-[#212121] px-8 py-14 md:p-28 space-y-10">
       <div className="flex flex-col w-full items-start justify-center gap-7 ">
         <Image
           src={project.logo}
@@ -73,7 +73,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="w-2/3 text-xl leading-loose">
+      <div className="md:w-2/3 text-xl leading-loose">
         <h2 className="text-3xl font-semibold">Design Process</h2>
         {project.designProcess?.map((item, index) => (
           <div key={item}>
@@ -95,7 +95,7 @@ const Page = () => {
         ))}
       </div>
 
-      <div className="w-2/3 text-xl leading-loose">
+      <div className="md:w-2/3 text-xl leading-loose">
         <p className="text-2xl font-semibold text-gray-500">
           Keeping It Simple
         </p>
@@ -114,12 +114,12 @@ const Page = () => {
         ))}
       </div>
 
-      <div className="w-2/3 text-xl leading-loose">
+      <div className="md:w-2/3 text-xl leading-loose">
         <h4 className="text-3xl font-semibold">Conclusion</h4>
         <p>{project.conclusion}</p>
       </div>
 
-      <p className="w-2/3 text-xl leading-loose">
+      <p className="md:w-2/3 text-xl leading-loose">
         Feel free to explore the live product{" "}
         <Link
           href={
@@ -134,7 +134,7 @@ const Page = () => {
         </Link>
       </p>
 
-      <div className="text-xl leading-loose flex justify-around w-2/3">
+      <div className="text-xl leading-loose flex md:flex-row flex-col justify-around md:w-2/3 space-y-6">
         <Button
           variant={"secondary"}
           className="text-xl leading-loose p-6 border border-orange-400 rounded-2xl bg-white font-semibold"
