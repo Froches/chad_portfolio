@@ -89,7 +89,7 @@ const Page = () => {
       </motion.div>
       <div
         className={`w-full h-full flex flex-col gap-8 ${
-          pathname === "projects/homeworkai" ? "" : "lg:flex-row"
+          pathname === "/projects/tifi" ? "w-2/3" : "lg:flex-row"
         }`}
       >
         <motion.div
@@ -183,7 +183,7 @@ const Page = () => {
             <div key={index} className="leading-loose text-xl my-10 space-y-3">
               <h3 className="text-gray-500 text-2xl">{title}</h3>
               <p>{description}</p>
-              <Image src={image} alt={title} />
+              <Image src={image} alt={title} width={1200} height={600} />
             </div>
           ))}
         </motion.div>
