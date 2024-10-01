@@ -33,7 +33,7 @@ const Page = () => {
         <Image
           src={project.logo}
           alt={project.title}
-          width={150}
+          width={pathname === "/projects/tifi" ? 150 : 300}
           height={150}
         />
         <h1 className="text-2xl">{project.title}</h1>
@@ -53,7 +53,7 @@ const Page = () => {
         </div>
       </motion.div>
       <motion.div
-        className="flex flex-col md:flex-row text-xl leading-loose gap-8 pt-10"
+        className="flex flex-col lg:flex-row text-xl leading-loose gap-8 pt-10"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
@@ -87,73 +87,110 @@ const Page = () => {
           </div>
         </div>
       </motion.div>
-      <motion.div
-        className="md:w-2/3 text-xl leading-loose"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.1 }}
-        variants={fadeIn}
+      <div
+        className={`w-full h-full flex flex-col gap-8 ${
+          pathname === "projects/homeworkai" ? "" : "lg:flex-row"
+        }`}
       >
-        <h2 className="text-3xl font-semibold">Design Process</h2>
-        {project.designProcess?.map((item, index) => (
-          <div key={item}>
-            <p className={`${index === 0 ? "text-gray-500 text-2xl" : "mb-5"}`}>
-              {item}
-            </p>
-          </div>
-        ))}
-      </motion.div>
-      <motion.div
-        className="flex flex-col lg:flex-row-reverse gap-8 w-full items-center justify-center"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.1 }}
-        variants={zoomIn}
-      >
-        {project.caseStudy?.map((item) => (
-          <Image
-            key={item}
-            alt="Case Study"
-            width={600}
-            height={100}
-            src={item}
-          />
-        ))}
-      </motion.div>
+        <motion.div
+          className="w-full text-xl leading-loose"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.1 }}
+          variants={fadeIn}
+        >
+          <h2 className="text-3xl font-semibold">Design Process</h2>
+          {project.designProcess?.map((item, index) => (
+            <div key={item}>
+              <p
+                className={`${
+                  index % 2 === 0 ? "text-gray-500 text-2xl" : "mb-5"
+                } ${
+                  index === 2 && pathname === "/projects/tifi"
+                    ? "text-inherit text-xl leading-loose"
+                    : ""
+                }`}
+              >
+                {item}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+        <motion.div
+          className="flex flex-col lg:flex-row-reverse gap-8 w-full items-center justify-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.1 }}
+          variants={zoomIn}
+        >
+          {project.caseStudy?.map((item) => (
+            <Image
+              key={item}
+              alt="Case Study"
+              width={600}
+              height={100}
+              src={item}
+            />
+          ))}
+        </motion.div>
+      </div>
+
+      {pathname === "/projects/tifi" && (
+        <motion.div
+          className="lg:w-2/3 text-xl leading-loose"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.1 }}
+          variants={fadeIn}
+        >
+          <p className="text-2xl font-semibold text-gray-500">
+            Keeping It Simple
+          </p>
+          <p>{project.simple}</p>
+        </motion.div>
+      )}
+
+      {pathname === "/projects/tifi" && (
+        <motion.div
+          className="w-full min-h-screen h-fit flex flex-col gap-8 items-center justify-start"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.1 }}
+          variants={zoomIn}
+        >
+          {project.extraCaseStudies?.map((item) => (
+            <Image
+              key={item}
+              alt="Extra Case Study"
+              width={1200}
+              height={600}
+              src={item}
+            />
+          ))}
+        </motion.div>
+      )}
+
+      {pathname === "/projects/homeworkai" && (
+        <motion.div
+          className="space-y-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.1 }}
+          variants={fadeIn}
+        >
+          <h2 className="text-3xl font-semibold">Key Features</h2>
+          {project.keyFeatures?.map(([title, description, image], index) => (
+            <div key={index} className="leading-loose text-xl my-10 space-y-3">
+              <h3 className="text-gray-500 text-2xl">{title}</h3>
+              <p>{description}</p>
+              <Image src={image} alt={title} />
+            </div>
+          ))}
+        </motion.div>
+      )}
 
       <motion.div
-        className="md:w-2/3 text-xl leading-loose"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.1 }}
-        variants={fadeIn}
-      >
-        <p className="text-2xl font-semibold text-gray-500">
-          Keeping It Simple
-        </p>
-        <p>{project.simple}</p>
-      </motion.div>
-
-      <motion.div
-        className="w-full min-h-screen h-fit flex flex-col gap-8 items-center justify-start"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.1 }}
-        variants={zoomIn}
-      >
-        {project.extraCaseStudies?.map((item) => (
-          <Image
-            key={item}
-            alt="Extra Case Study"
-            width={1200}
-            height={600}
-            src={item}
-          />
-        ))}
-      </motion.div>
-
-      <motion.div
-        className="md:w-2/3 text-xl leading-loose"
+        className="lg:w-2/3 text-xl leading-loose"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.1 }}
@@ -163,13 +200,13 @@ const Page = () => {
         <p>{project.conclusion}</p>
       </motion.div>
 
-      <p className="md:w-2/3 text-xl leading-loose">
+      <p className="lg:w-2/3 w-full text-xl leading-loose">
         Feel free to explore the live product{" "}
         <Link
           href={
             pathname === "/projects/tifi"
               ? "https://tifi.tv"
-              : "https://homeworkai.com"
+              : "https://aiforhomework.com"
           }
           target="_blank"
           className="text-orange-400 underline"
@@ -178,7 +215,7 @@ const Page = () => {
         </Link>
       </p>
 
-      <div className="text-xl leading-loose flex md:flex-row flex-col justify-around md:w-2/3 space-y-6">
+      <div className="text-xl leading-loose flex md:flex-row flex-col justify-around md:w-2/3 space-y-6 md:space-y-0">
         <Button
           variant={"secondary"}
           className="text-xl leading-loose p-6 border border-orange-400 rounded-2xl bg-white font-semibold"

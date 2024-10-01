@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
-import { fadeIn, zoomIn } from "@/app/variants";
+import { zoomIn } from "@/app/variants";
 
 const Projects = () => {
   useEffect(() => {
