@@ -3,24 +3,18 @@
 import Image from "next/image";
 import heroIllustration from "@/../public/assets/hero-illustration.svg";
 import Projects from "@/components/Projects";
-// import { useEffect } from "react";
-// import AOS from "aos";
-import "aos/dist/aos.css";
+import { fadeIn } from "@/app/variants";
+import { motion } from "framer-motion";
 
 export default function Home() {
-  // useEffect(() => {
-  //   AOS.init({
-  //     offset: 200,
-  //     duration: 600,
-  //     easing: "ease-in-sine",
-  //     delay: 100,
-  //   });
-  // }, []);
   return (
     <div className="flex flex-col items-center justify-start min-h-screen bg-white text-black space-y-20">
-      <div
+      <motion.div
         className="flex items-center justify-center flex-col md:flex-row w-full gap-8 px-10 py-20 bg-[url('/assets/bgStars.svg')] bg-cover bg-center"
-        data-aos="fade-in"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+        variants={fadeIn}
       >
         <div className="flex items-center justify-center flex-col w-full md:w-1/2 lg:mx-16 gap-8">
           <span className="w-full">
@@ -43,7 +37,7 @@ export default function Home() {
           alt="hero illustration"
           className="md:block md:w-1/2 lg:w-auto"
         />
-      </div>
+      </motion.div>
       <Projects />
     </div>
   );

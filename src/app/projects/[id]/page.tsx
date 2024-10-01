@@ -7,6 +7,8 @@ import { mockProjects } from "../MockProjects";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { fadeIn, zoomIn } from "@/app/variants";
+import { motion } from "framer-motion";
 
 const Page = () => {
   const params = useParams();
@@ -20,8 +22,14 @@ const Page = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-white text-[#212121] px-8 py-14 md:p-28 space-y-10">
-      <div className="flex flex-col w-full items-start justify-center gap-7 ">
+    <motion.div className="flex flex-col items-center justify-start min-h-screen bg-white text-[#212121] px-8 py-14 md:p-28 space-y-10">
+      <motion.div
+        className="flex flex-col w-full items-start justify-center gap-7"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.1 }}
+        variants={fadeIn}
+      >
         <Image
           src={project.logo}
           alt={project.title}
@@ -43,8 +51,14 @@ const Page = () => {
             <span className="ml-8 w-10/12">{project.year}</span>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col md:flex-row text-xl leading-loose gap-8 pt-10">
+      </motion.div>
+      <motion.div
+        className="flex flex-col md:flex-row text-xl leading-loose gap-8 pt-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        variants={zoomIn}
+      >
         <div className="space-y-10">
           <div>
             <h2 className="text-3xl font-semibold">Project Background</h2>
@@ -72,8 +86,14 @@ const Page = () => {
             <p>{project.impact}</p>
           </div>
         </div>
-      </div>
-      <div className="md:w-2/3 text-xl leading-loose">
+      </motion.div>
+      <motion.div
+        className="md:w-2/3 text-xl leading-loose"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.1 }}
+        variants={fadeIn}
+      >
         <h2 className="text-3xl font-semibold">Design Process</h2>
         {project.designProcess?.map((item, index) => (
           <div key={item}>
@@ -82,8 +102,14 @@ const Page = () => {
             </p>
           </div>
         ))}
-      </div>
-      <div className="flex flex-col lg:flex-row-reverse gap-8 w-full items-center justify-center">
+      </motion.div>
+      <motion.div
+        className="flex flex-col lg:flex-row-reverse gap-8 w-full items-center justify-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.1 }}
+        variants={zoomIn}
+      >
         {project.caseStudy?.map((item) => (
           <Image
             key={item}
@@ -93,16 +119,28 @@ const Page = () => {
             src={item}
           />
         ))}
-      </div>
+      </motion.div>
 
-      <div className="md:w-2/3 text-xl leading-loose">
+      <motion.div
+        className="md:w-2/3 text-xl leading-loose"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.1 }}
+        variants={fadeIn}
+      >
         <p className="text-2xl font-semibold text-gray-500">
           Keeping It Simple
         </p>
         <p>{project.simple}</p>
-      </div>
+      </motion.div>
 
-      <div className="w-full min-h-screen h-fit flex flex-col gap-8 items-center justify-start">
+      <motion.div
+        className="w-full min-h-screen h-fit flex flex-col gap-8 items-center justify-start"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.1 }}
+        variants={zoomIn}
+      >
         {project.extraCaseStudies?.map((item) => (
           <Image
             key={item}
@@ -112,12 +150,18 @@ const Page = () => {
             src={item}
           />
         ))}
-      </div>
+      </motion.div>
 
-      <div className="md:w-2/3 text-xl leading-loose">
+      <motion.div
+        className="md:w-2/3 text-xl leading-loose"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.1 }}
+        variants={fadeIn}
+      >
         <h4 className="text-3xl font-semibold">Conclusion</h4>
         <p>{project.conclusion}</p>
-      </div>
+      </motion.div>
 
       <p className="md:w-2/3 text-xl leading-loose">
         Feel free to explore the live product{" "}
@@ -154,7 +198,7 @@ const Page = () => {
           See More Projects
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

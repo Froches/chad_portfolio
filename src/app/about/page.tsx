@@ -2,23 +2,24 @@
 import headShot from "@/../public/assets/headShot.svg";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { fadeIn } from "@/app/variants";
+import { motion } from "framer-motion";
 
 const Page = () => {
-  useEffect(() => {
-    AOS.init({
-      offset: 200,
-      duration: 600,
-      easing: "ease-in-sine",
-      delay: 100,
-    });
-  }, []);
+
+  const handleResume = () => {
+    window.open(
+      "https://drive.google.com/file/d/1vvx1o-jAm_kiQKN6U7M8TXDl0iNiQCHo/view?usp=sharing",
+      "_blank"
+    );
+
+  }
   return (
-    <div
+    <motion.div
       className="flex flex-col items-center justify-start min-h-screen bg-white text-black pb-20"
-      data-aos="fade"
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
     >
       <span className="md:w-1/2 w-full self-start px-10 md:mx-32 pt-20 pb-16 leading-loose">
         <h3 className="text-4xl font-medium mb-3">Get to know about</h3>
@@ -49,13 +50,13 @@ const Page = () => {
               love for arts, culture, entertainment, and sports.
             </span>
           </p>
-          <Button className="p-6 text-xl rounded-xl bg-customYellow border-b-4 border-[#573102] text-black md:self-start self-center hover:border-b-0 hover:bg-customYellow transition-all ease-in-out">
+          <Button onClick={handleResume} className="p-6 text-xl rounded-xl bg-customYellow border-b-4 border-[#573102] text-black md:self-start self-center hover:border-b-0 hover:bg-customYellow transition-all ease-in-out">
             My Resume
           </Button>
         </div>
         <Image src={headShot} alt="Temi headshot" className="" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
